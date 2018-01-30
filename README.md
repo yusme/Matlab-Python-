@@ -13,11 +13,10 @@
 Once you checked out, run this in a Terminal window to go to the folder that contains the engine API,
 and to install it:
 
-
-
-- cd     %PROGRAMFILES%/MATLAB/R2015/extern/engines/python
-
--  python  setup.py build --build-base=%TEMP% install
+```bash
+cd     %PROGRAMFILES%/MATLAB/R2015/extern/engines/python
+python  setup.py build --build-base=%TEMP% install
+```
 
 ### Installation 
 
