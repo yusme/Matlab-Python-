@@ -3,19 +3,20 @@
 ## Install engine Matlab Engine API for Python
 
 ### Technical requirements
- Python and MATLAB R2014b or later.
-  Find the path to the MATLAB folder: Start MATLAB and type matlabroot in the command window. 
+ 1 - Python and MATLAB R2014b or later.
+ 2-  Matlab engine API for Python 
+ 2-  Find the path to the MATLAB folder: Start MATLAB and type matlabroot in the command window. 
  
 
-### Installation 
+### Installation of engine API
 
 
 Once you checked out, run this in a Terminal window to go to the folder that contains the engine API,
 and to install it:
 
 ```bash
-cd     %PROGRAMFILES%/MATLAB/R2015/extern/engines/python
-python  setup.py build --build-base=%TEMP% install
+cd %PROGRAMFILES%/MATLAB/R2015/extern/engines/python
+python setup.py build --build-base=%TEMP% install
 ```
 
 ### Installation 
