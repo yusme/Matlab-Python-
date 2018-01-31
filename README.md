@@ -3,8 +3,9 @@ b# Matlab-Python
 ## Install engine Matlab Engine API for Python
 
 ### Technical requirements
-  - Python and MATLAB R2014b or later. 
- - Find the path to the MATLAB folder: Start MATLAB and type matlabroot in the command window. 
+  - Python, version 2.7 or higher
+  - MATLAB R2014b or later. 
+ 
 
 
 
@@ -19,6 +20,16 @@ cd %PROGRAMFILES%/MATLAB/R2015b/extern/engines/python
 python setup.py build --build-base=%TEMP% install
 ```
 
-###  
+###  Run Simulation 
+the name of Simulation and der time have to be set 
 
+model ='simu' 
+time 
+
+
+ connection = CM.ConnectionMatlab()       
+ connection.Openconnection();
+ connection.runSimulation(model,times);
+    
+###  
 
