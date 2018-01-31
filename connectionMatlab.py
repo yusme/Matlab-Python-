@@ -9,7 +9,7 @@ Created on Mon Jan 29 12:10:12 2018
 
 import matlab.engine
 import matplotlib.pyplot as plt
-#import connectionMatlab1 as CM
+
 
 
 
@@ -59,27 +59,17 @@ class ConnectionMatlab:
         
         
         
-        
-        
-        
     # simulation 1
     def runSimulation(self,model, times):
     
         print("runSimulation" );    
        
-        eng = self.eng            
-        
-         
+        eng = self.eng   
         eng.eval("sim('"+model+"')");  
         
-        #eng.eval("set_param('"+model+"','StartTime','0','StopTime','80')",nargout=0);
-        
-           
         StartTime = times["StartTime"];          
         StopTime  = times["StopTime"];         
         N =  len(times["StartTime"])
-        
-        
         
         for n in range(0,N):    
             
@@ -95,23 +85,20 @@ class ConnectionMatlab:
            print ("'StopTime:'",  eng.get_param(model,'StopTime') )            
            
            
-           # set run Simulation 
+           # run Simulation 
            eng.eval("sim('"+model+"')");         
            
            var={}
-           var=eng.workspace['ScopeData']     
-          
+           var=eng.workspace['ScopeData'] 
            print ("ScopeData:", "\n\n:",var) 
+        
+            
            # run algorithmus
            self.runAlgorithmus(var)
             
            
-           print ("\n ENDE")  
+           print ("\n")  
            
-          # eng.eval("save('test.mat','ScopeData')");
-           
-           
-     
         
     def runAlgorithmus(self,var):
         x = var['time']
