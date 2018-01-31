@@ -1,4 +1,4 @@
-# Matlab-Python
+b# Matlab-Python
 
 ## Install engine Matlab Engine API for Python
 
@@ -15,7 +15,7 @@ Once you checked out, run this in a Terminal window to go to the folder that con
 and to install it:
 
 ```bash
-cd %PROGRAMFILES%/MATLAB/R2015/extern/engines/python
+cd %PROGRAMFILES%/MATLAB/R2015b/extern/engines/python
 python setup.py build --build-base=%TEMP% install
 ```
 
