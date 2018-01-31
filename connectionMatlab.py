@@ -11,10 +11,6 @@ import matlab.engine
 import matplotlib.pyplot as plt
 
 
-
-
-
-
 class ConnectionMatlab:
     
     
@@ -31,7 +27,6 @@ class ConnectionMatlab:
          plt.plot(x,y)
          plt.show();
        
-        
        
     
     
@@ -41,10 +36,7 @@ class ConnectionMatlab:
         if(ret==2.0):
             print('Run connection---Done!', ret)        
             self.eng = eng; 
-            
-            
-            
-        
+      
         
     def LoadInputData(self, inputData):
         eng = self.eng 
