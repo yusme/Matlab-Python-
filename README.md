@@ -21,18 +21,6 @@ python setup.py build --build-base=%TEMP% install
 ```
 
 ###  Run Simulation 
-the name of Simulation and der time have to be set 
-make sure that the Matlab-File 'slx' in  \MATLAB Folder 
-
-
 
 model ='simu' 
-time 
-
-
- connection = CM.ConnectionMatlab()       
- connection.Openconnection();
- connection.runSimulation(model,times);
-    
-###  
 
