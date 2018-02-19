@@ -30,8 +30,7 @@ class ConnectionMatlab:
          plt.plot(x,y)
          plt.show();
        
-        
-       
+           
     
     
     def Openconnection(self):         
@@ -42,8 +41,7 @@ class ConnectionMatlab:
             print('Run connection---Done!', ret)        
             self.eng = eng; 
             
-            
-            
+                       
         
         
     def LoadInputData(self):
@@ -55,8 +53,7 @@ class ConnectionMatlab:
         print("var:__",var)
         print('setInputData---Done!') 
         
-        
-        
+         
         
         
         
@@ -78,10 +75,10 @@ class ConnectionMatlab:
         StartTime = times["StartTime"]  ;          
         StopTime  = times["StopTime"];          
         
-        for n in range(0,2):    
+        for n in range(0,3):    
             
             
-           cad ="set_param('"+model+"','StartTime','"+ str(StartTime[n])+"', 'StopTime' ,'"+ str(StopTime[n])+"')";
+           cad =cad ="set_param('"+model+"','StartTime','"+ str(StartTime[n])+"', 'StopTime' ,'"+ str(StopTime[n])+"')";        
           
            print ("--",  cad)
            
@@ -95,15 +92,15 @@ class ConnectionMatlab:
            
            eng.eval("sim('"+model+"')");
            var =eng.workspace['ScopeData']
-           #x = var['time']
-           #y = var['signals']['values']
+           x = var['time']
+           y = var['signals']['values']
              
            
            #print ('ScopeData: ', var)
           
             
            #algorithmus
-           #self.plotResults(x,y) 
+           self.plotResults(x,y) 
            print ("\n ENDE")  
            
            
@@ -123,14 +120,11 @@ class ConnectionMatlab:
     
     
     
- 
-    
-    
     
 def main():    
    
     model ='simu'
-    #result="ScopeData"     
+    result="ScopeData"     
    
     
     #var={};
@@ -141,36 +135,41 @@ def main():
     print ("\n times ", times["StartTime"]," *** ",  times["StopTime"])
     connection = CM.ConnectionMatlab()      
     connection.Openconnection();
-    #connection.runSimulation(model,times);
-
-
-
-    #========
-    print ("\n first simulation Done!  \n\n")
+    connection.runSimulation(model,times);
+    
+    print ("\n first simulation \n\n")
+    
+    
+    
+    
+    
+    print ("\n Model Set_Input Data  done! \n\n") 
      
     model ='data_import'
     connection.LoadInputData();
     connection.runSimulationInput(model);
     
-
     
     
-    print ("\n second simulation  Done! \n\n")
     
-    times["StartTime"] = [0.0,0.0];    
-    times["StopTime"] = [0.06,0.09]
+    
+    print ("\n  second simulation Done!\n\n")
+    
+    times["StartTime"] = [0.0,0.00,0.00];    
+    times["StopTime"] = [0.03,0.06,0.09]     
+    
     
     model ='sldemo_h'
-    connection.runSimulation(model,times);
+    connection.runSimulation1(model,times);
     
-    print ("\n End third simulation Done! \n\n")
+    print ("\n third simulation  done!\n\n")
     #var={};
     #signals={};
     #signals["values"] = [0, 0, 2, 2, 2, 3, 3, 3];    
     #signals["dimensions"] = 1;    
     
     
-       
+    
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
 main() 
